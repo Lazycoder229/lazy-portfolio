@@ -1,0 +1,52 @@
+body {
+  font-family: "Inter", sans-serif;
+}
+.glass-nav {
+  backdrop-filter: blur(12px);
+  background-color: rgba(10, 10, 10, 0.8);
+}
+.hero-gradient {
+  background: radial-gradient(
+    circle at 50% 50%,
+    rgba(57, 255, 20, 0.2) 0%,
+    transparent 70%
+  );
+}
+
+.bg-grid {
+  background-image:
+    linear-gradient(to right, rgba(57, 255, 20, 0.5) 1.5px, transparent 1.5px),
+    linear-gradient(to bottom, rgba(57, 255, 20, 0.5) 1.5px, transparent 1.5px);
+  background-size: 50px 50px;
+  mask-image: radial-gradient(
+    circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
+    black 0%,
+    transparent 60%
+  );
+  -webkit-mask-image: radial-gradient(
+    circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
+    black 0%,
+    transparent 60%
+  );
+  transition: mask-image 0.1s ease-out;
+  animation: grid-drift 60s linear infinite;
+}
+
+@keyframes grid-drift {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: 50px 50px;
+  }
+}
+.neon-glow-primary {
+  text-shadow:
+    0 0 10px rgba(57, 255, 20, 0.8),
+    0 0 20px rgba(57, 255, 20, 0.4);
+}
+.neon-box-glow {
+  box-shadow:
+    0 0 20px rgba(57, 255, 20, 0.6),
+    0 0 40px rgba(57, 255, 20, 0.2);
+}
